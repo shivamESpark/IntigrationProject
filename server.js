@@ -47,7 +47,8 @@ app.use("/delimetersearch", delimeterSearch);
 const dynamicGried = require("./Routes/dynamicGrid/dynamicGrid");
 app.use("/dynamicgrid", dynamicGried);
 
-
+const studentPageURL = require("./Routes/studentSortingPagingURL/studentPaging");
+app.use("/studentURL", studentPageURL);
 
 
 app.listen(8080);
