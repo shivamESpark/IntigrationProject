@@ -56,4 +56,8 @@ app.use("/studentresult", studentResult);
 const wireFrameAJAX = require("./Routes/wireframeAJAX/wireframAJAX");
 app.use("/wireframeajax", wireFrameAJAX);
 
+const timezone = require("./Routes/timezone/timezone");
+app.use("/timezone", timezone);
+
+
 app.listen(8080);

@@ -334,7 +334,7 @@
             })
             console.log(jObj)
         
-            const response = await fetch("http://localhost:8080/addData", {
+            const response = await fetch("http://localhost:8080/wireframeajax/addData", {
                 method:"POST",
                 body: JSON.stringify(jObj),
                 headers : {
@@ -369,7 +369,7 @@
             })
             console.log(jObj)
         
-            const response = await fetch("http://localhost:8080/update", {
+            const response = await fetch("http://localhost:8080/wireframeajax/update", {
                 method:"POST",
                 body: JSON.stringify(jObj),
                 headers : {
@@ -454,11 +454,11 @@
             if(ids){
                 postDataUpdate()
                 alert("your data has been updated");   
-                window.location.replace("http://localhost:8080/");
+                window.location.replace("http://localhost:8080/wireframeajax");
             } else {
                 postData();
                 alert("your response has been submited");
-                window.location.replace("http://localhost:8080/");
+                window.location.replace("http://localhost:8080/wireframeajax");
             }
             
             displayCounter--;

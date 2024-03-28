@@ -24,6 +24,7 @@
 <body>
     <center>
         <h1>ALL USERS</h1>
+        <h4><a href="http://localhost:8080/wireframeajax/addData">Add Users</a></h4>
         <table id="showTable">
             <thead>
                 <th>First Name</th>
@@ -59,7 +60,7 @@
             const city = document.createElement("p");
             // const update = document.createElement("p");
             const updateA = document.createElement("a");
-            updateA.setAttribute("href", `http://localhost:8080/update/?id=${dbValues[index].id}`);
+            updateA.setAttribute("href", `http://localhost:8080/wireframeajax/update/?id=${dbValues[index].id}`);
 
             tds1.appendChild(fname);
             tds2.appendChild(lname);
@@ -103,7 +104,7 @@
     }
     
     function updatePage(userId){
-        let links = `http://localhost:8080/update/?id=${userId}`
+        let links = `http://localhost:8080/wireframeajax/update/?id=${userId}`
         console.log(links);
     }
 
@@ -111,7 +112,7 @@
             const queryString = window.location.search;
             const urlParams = new URLSearchParams(queryString);
             const id = urlParams.get("id");
-            const response = await fetch(`http://localhost:8080/db/?id=${id}`);
+            const response = await fetch(`http://localhost:8080/wireframeajax/db/?id=${id}`);
 
             data = await response.json(); 
             

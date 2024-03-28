@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Intigration</title>
     <style>
+        body{
+            background-color: #e0c1ff;
+        }
         #main{
-            background-color: rgb(224, 193, 255);
+            background-color: #e0c1ff;
             margin: 0 auto;
             width: 450px;
         }
@@ -15,14 +18,21 @@
         }
         .menus p{
             padding: 5px;
-            margin: 5px
+            margin: 5px;
+        }
+        .menus p a{ 
+            text-decoration: none;
+            font-size: large;
+            background-color: white;
+            padding: 5px;
+            border-radius: 5px;
         }
     </style>
 </head>
 
 <body>
-    <h1>Basic Training Works</h1>
     <div id="main">
+        <h1>Basic Training Works</h1>
         <div id="dynamic" class="menus">
             <!-- <p>Dynamic Tables</p> -->
             <p><a href="http://localhost:8080/dynamic">Dynamic Table</a></p>
@@ -66,6 +76,10 @@
         <div id="dynamic" class="menus">
             <!-- <p>Events Table Tables</p> -->
             <p><a href="http://localhost:8080/studentresult/result?pid=1">student result detailed</a></p>
+        </div>
+        <div id="dynamic" class="menus">
+            <!-- <p>Events Table Tables</p> -->
+            <p><a href="http://localhost:8080/timezone">Timezones</a></p>
         </div>
 
         
