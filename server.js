@@ -50,5 +50,7 @@ app.use("/dynamicgrid", dynamicGried);
 const studentPageURL = require("./Routes/studentSortingPagingURL/studentPaging");
 app.use("/studentURL", studentPageURL);
 
+const studentResult = require("./Routes/studentResult/studentResult");
+app.use("/studentresult", studentResult);
 
 app.listen(8080);
