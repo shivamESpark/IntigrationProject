@@ -42,6 +42,8 @@ app.use("/kukucube", kukuCube);
 const tickTackToe = require("./Routes/tickTackToe/tickTackToe");
 app.use("/tickTacToe", tickTackToe);
 
+const delimeterSearch = require("./Routes/delimeterSearch/delimeterSearch");
+app.use("/delimetersearch", delimeterSearch);
 
 
 
