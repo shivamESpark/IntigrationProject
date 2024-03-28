@@ -39,7 +39,8 @@ const kukuCube = require("./Routes/kukuCube/kukuCube");
 app.use("/kukucube", kukuCube);
 
 
-
+const tickTackToe = require("./Routes/tickTackToe/tickTackToe");
+app.use("/tickTacToe", tickTackToe);
 
 
 
