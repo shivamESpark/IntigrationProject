@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login User</title>
+    <style>
+        #mn{
+            width: 300px;
+            margin: 0 auto;
+        }
+        #singin, #singup{
+            background-color: blue;
+            border-radius: 7px;
+            text-align: center;
+            color: white;
+            padding: 5px;
+            margin: 5px;
+        }
+        #btn{
+            display: flex;  
+        }
+    </style>
+</head>
+<body>
+    <div id="mn">
+        <h1>Login</h1>
+        <form method="post">
+            <table>
+                <tr>
+                    <td><label for="email">Email</label></td>
+                    <td><input type="email" name="email"></td>
+                </tr>
+                <tr>
+
+                </tr>
+                    <td><label for="password">Password</label></td>
+                    <td><input type="password" id="password" name="password"></td>
+                </tr>
+            </table>
+            <div id="btn">
+                <p id="singin">Sing In</p>
+                <p id="singup">Sing Up</p>
+            </div>
+        </form>
+        <h1 id="login" hidden>Password or Email is wrong!</h1>
+
+    </div>
+</body>
+</html>
+<script>
+    const singins = document.querySelector("#singin");
+    const singups = document.querySelector("#singup");
+
+    singins.addEventListener("click", singin);
+    singups.addEventListener("click", singup);
+
+
+    function objCreation(){
+        let formEntries = new FormData(document.querySelector("form"));
+        const obj = {}
+        formEntries.forEach((values, keys)=>{
+            if(obj[keys] != undefined){
+                obj[keys] += `,${values}`;
+            } else {
+                obj[keys] = values;
+            }
+        });
+        return obj;
+    }
+
+    async function singin(){
+        const response = await fetch("http://localhost:8080/login", {
+            method : "post",
+            body : JSON.stringify(objCreation()),
+            headers : {
+                'Content-Type': 'application/json'
+            }
+        });
+        const data = await response.json();
+        if(data.status == 3001){
+            document.getElementById("login").hidden = false;
+        } 
+
+        if(data.status == 200){
+            window.location = data.alink;
+        }
+    }
+
+    function singup(){
+        window.location = "http://localhost:8080/";
+    }
+</script>

@@ -1,0 +1,40 @@
+const express = require("express");
+const app = express();
+const {dbConnection} = require("./dbHandler/dbConnection");
+const con = dbConnection();
+const url = require("url");
+
+
+
+app.set("view engine", "ejs");
+
+app.use(express.json());
+
+app.get("/", (req, res)=>{
+    res.render("index");    
+})
+
+const dbData = require("./dbHandler/dbFetch");
+app.use("/db", dbData);
+
+const addUsers = require("./Routes/addUser");
+app.use("/add", addUsers);
+
+const password = require("./Routes/dbPass");
+app.use("/activate", password);
+
+const loginpage = require("./Routes/login");
+app.use("/login", loginpage);
+
+
+
+
+
+
+
+
+
+
+
+
+app.listen(8080);
