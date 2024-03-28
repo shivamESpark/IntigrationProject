@@ -38,12 +38,14 @@ app.use("/events", eventsTable);
 const kukuCube = require("./Routes/kukuCube/kukuCube");
 app.use("/kukucube", kukuCube);
 
-
 const tickTackToe = require("./Routes/tickTackToe/tickTackToe");
 app.use("/tickTacToe", tickTackToe);
 
 const delimeterSearch = require("./Routes/delimeterSearch/delimeterSearch");
 app.use("/delimetersearch", delimeterSearch);
+
+const dynamicGried = require("./Routes/dynamicGrid/dynamicGrid");
+app.use("/dynamicgrid", dynamicGried);
 
 
 
