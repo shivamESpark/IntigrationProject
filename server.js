@@ -29,6 +29,14 @@ app.use("/login", loginpage);
 
 
 
+const dynamicTable = require("./Routes/dynamicTable/dynamicTable");
+app.use("/dynamic", dynamicTable)
+
+const eventsTable = require("./Routes/eventsTable/eventsTable");
+app.use("/events", eventsTable);
+
+const kukuCube = require("./Routes/kukuCube/kukuCube");
+app.use("/kukucube", kukuCube);
 
 
 
