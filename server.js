@@ -53,4 +53,7 @@ app.use("/studentURL", studentPageURL);
 const studentResult = require("./Routes/studentResult/studentResult");
 app.use("/studentresult", studentResult);
 
+const wireFrameAJAX = require("./Routes/wireframeAJAX/wireframAJAX");
+app.use("/wireframeajax", wireFrameAJAX);
+
 app.listen(8080);
